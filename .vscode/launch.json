@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch NestJS",
+            "program": "${workspaceFolder}/dist/main.js", // Mude para o caminho do seu arquivo principal
+            "outFiles": ["${workspaceFolder}/dist/**/*.js"], // Mapeia os arquivos de saída
+            "runtimeArgs": ["--inspect-brk"], // Inicia em modo de depuração
+            "skipFiles": ["<node_internals>/**"]
+        }
+    ]
+}

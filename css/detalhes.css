@@ -1,0 +1,68 @@
+body{
+    margin: 0; /* Remove a margem padrão do body */
+}
+
+.detalhes-evento {
+    max-width: 800px; /* Largura máxima */
+    margin: 20px auto; /* Centralizar */
+    background-color: white; /* Fundo branco para a seção de detalhes */
+    padding: 20px;
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.detalhes-evento h2 {
+    text-align: center; /* Centraliza o título */
+    color: #007BFF; /* Cor do texto */
+}
+
+#imagem-evento {
+    width: 600px; /* Largura da imagem */
+    height: auto; /* Mantém a proporção */
+    border: 2px solid #007BFF; /* Borda simples */
+    border-radius: 4px; /* Cantos arredondados */
+    display: block; /* Permite margens laterais */
+    margin: 20px auto; /* Centraliza a imagem */
+}
+
+.info-detalhes {
+    text-align: left; /* Alinha o texto à esquerda */
+    margin: 50px 0; /* Margem acima e abaixo */
+}
+
+.info-detalhes h3 {
+    color: #121212; /* Cor do título do evento */
+    margin: 10px 0; /* Margem vertical */
+}
+
+.info-detalhes p {
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 5px 0; /* Margem vertical */
+    color: #555; /* Cor do texto */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  
+  #loadMoreButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  #loadMoreButton:hover {
+    background-color: #0056b3;
+  }
+
+
+      button:hover {
+          background-color: #0056b3; /* Cor ao passar o mouse */
+      }

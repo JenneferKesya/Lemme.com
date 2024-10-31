@@ -1,0 +1,76 @@
+body{
+    margin: 0; /* Remove a margem padrão do body */
+}
+
+
+/* Seção de eventos em destaque */
+.eventos-destaque {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.eventos-destaque h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Contêineres dos eventos */
+.eventos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.eventos a {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 220px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.eventos a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagens dos eventos */
+.eventos a img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Informação dos eventos */
+.info-evento {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.info-evento h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.info-evento p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+/* Localização e preço */
+.local {
+    font-style: italic;
+    color: #555;
+}
+
+.preco {
+    font-weight: bold;
+    color: #0068E9;
+}
+

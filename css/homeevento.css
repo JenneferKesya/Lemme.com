@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #0070c9;
+    font-size: 24px;
+  }
+  
+  #event-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .event-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .event-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .event-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .event-card h3 {
+    color: #0070c9;
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .event-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .event-card .price {
+    color: #0070c9;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  
+  #loadMoreButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  #loadMoreButton:hover {
+    background-color: #0056b3;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+  }
+  
+  

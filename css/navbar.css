@@ -1,0 +1,103 @@
+body{
+    margin: 0; /* Remove a margem padrão do body */
+    padding: 0;
+}
+
+header {
+    background-color: #E5F1FF;
+    color: #0068;
+
+    top: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    
+}
+
+.logo{
+    width: 100px; /* Ajusta a largura da logo conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-left: 15px; /* Espaço à esquerda da logo */
+    margin-top: 10px; /* Espaço acima da barra de navegação */
+   
+}
+
+nav {
+    margin-top: 0; /* Espaço acima da barra de navegação */
+}
+
+nav ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Usa flexbox para organizar os itens horizontalmente */
+    justify-content: flex-end;  /* Alinha os itens à direita */
+    padding-right: 15px; /* Adiciona um pequeno espaço à direita */
+
+}
+
+nav ul li {
+    display: inline; /* Certifica-se de que os itens sejam exibidos lado a lado */
+    font-family:'Times New Roman', Times, serif;
+    
+}
+
+nav ul li a {
+    color:#0068E9;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size: 14px;
+
+}
+
+nav ul li a:hover {
+    font-weight: bold; /* Torna o texto em negrito */
+    text-decoration: underline; /* Adiciona sublinhado ao texto */
+}
+
+.icone-carrinho{
+    width: 20px; /* Ajusta a largura para 24 pixels */
+    height: 20px; /* Ajusta a altura para 24 pixels */
+    vertical-align: middle; /* Alinha verticalmente no meio do texto */
+    margin-top: -5px; /* Ajusta o valor conforme necessário para subir a imagem */
+    margin-left: -10px; /* Move a imagem para a esquerda */
+    transition: transform 0.2s; /* Adiciona uma transição suave ao efeito */   
+}
+
+.carrinho-link:hover .icone-carrinho{
+    transform: scale(1.2); /* Aumenta a imagem 10% */
+    
+}
+
+.filtro {
+    color: #0068E9;
+    margin-top: 5px; /* Espaço acima do filtro */
+    padding: 10px; /* Padding interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    margin-left: 20px;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 14px;
+    
+}
+
+.filtro select {
+    padding: 5px; /* Padding interno do campo de seleção */
+    border: none;
+    border-radius: 4px; /* Bordas levemente arredondadas */
+    background-color: transparent; /* Remove a cor de fundo */
+    font-size: 14px; /* Tamanho da fonte */
+    color:  #0068E9; /* Cor do texto */
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+
+
+
+

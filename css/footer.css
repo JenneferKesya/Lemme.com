@@ -1,0 +1,96 @@
+footer {
+    background-color: #002855;
+    color: white;
+    padding: 0px 0px;
+    text-align: center;
+    
+}
+
+.ajuda {
+    background-color: #007bff;
+    color: #fcfcfc;
+    border-radius: 10px;
+    margin:  0 auto 20px;
+    padding: 20px;
+    padding-left: 400px;
+    position: relative; /* Definindo uma largura fixa */
+    text-align: left;          /* Alinha o texto à esquerda */
+    box-sizing: border-box;      /* Inclui o padding e a borda no cálculo da largura */
+}
+
+.ajuda h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ajuda p {
+    margin-bottom: 15px;
+}
+
+.botao-whatsapp {
+    display: inline-block;
+    background-color: white;
+    color: #007bff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 230px;        /* Define a largura do botão */
+    height: 27px;        /* Define a altura do botão */
+}
+
+.botao-whatsapp img {
+    width: 20px;
+    height: 20px;
+}
+
+.imagem-iphone {
+    position: fixed; /* Mantém a imagem fixa */
+    right: 40%; /* 40% da largura da tela a partir da borda direita */
+    bottom: 20px; /* 20 pixels acima da borda inferior da janela */
+    width: 100px; /* Largura da imagem */
+    z-index: 1000; /* Garante que a imagem fique acima de outros elementos */
+}
+
+/* Rodapé inferior */
+.rodape-inferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-e-direitos {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.links {
+    padding-left: 800px;
+    margin-top: -70px;
+}
+
+.redes-sociais{
+    padding-left: 900px;
+    margin-top: -70px;
+}
+
+.links a {
+    color: rgb(228, 226, 226);
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.redes-sociais a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}

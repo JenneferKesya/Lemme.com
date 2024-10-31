@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css"> <!-- Arquivo de estilo externo -->
+    <link rel="stylesheet" href="css/footer.css"> 
+    <link rel="stylesheet" href="css/navbar.css"> 
+    <link rel="stylesheet" href="css/homeevento.css"> 
+    
+    <footer></footer>
+    <title>Lemme</title>
+</head>
+<body>
+   <header>
+    <script src="components/navbar.js"></script>
+    <script>
+        createHeader(); // Chama a função para inserir o cabeçalho
+      </script>
+   </header>
+
+    <!-- Espaço entre a barra de navegação e o conteúdo principal -->
+    <div style="background-color: #E3F2FD; height: 50px;"></div>
+
+    <!-- Seção principal com texto e imagem -->
+    <div class="containerCaixa">
+        <div class="container">
+            <div class="row" id="eventosContainer">
+                <div class="col">
+                    <h1 class="tituloStyle">
+                        <p><b>LEMME</b></p> <!-- Título principal -->
+                    </h1><br>
+                    <p>A partir deste ano, todas as atividades complementares serão realizadas no Lemme...</p><br> <!-- Texto introdutório -->
+                    <b>O Lemme simplifica a gestão de atividades extracurriculares, facilitando o envolvimento de alunos, pais e educadores</b><br><br>
+                    <button type="button" class="btn btn-primary btn-sm">Saiba mais</button> <!-- Botão -->
+                </div>
+                <div class="col">
+                    <img class="imgContainer" src="img/extracurricula.jpg" alt="Imagem descritiva"> <!-- Imagem ao lado do texto -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <!-- Seção de atividades em destaque -->
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-11">
+                <h2><p><b>Produtos em destaque</b></p></h2> <!-- Subtítulo -->
+                <div id="product-container"></div> 
+                
+            </div>
+            <div class="col"></div>
+        </div>
+        
+        <div class="button-container">
+            <a href="produtos.html">
+              <button id="loadMoreButton">Ver mais produtos</button>
+            </a>
+          </div>
+          
+
+          <h2><p><b>Eventos em destaque</b></p></h2>
+          <div id="event-container"></div>
+
+          <div class="button-container">
+            <a href="eventos.html">
+              <button id="loadMoreButton">Ver mais eventos</button>
+            </a>
+          </div>
+          
+
+          
+        <script src="components/footer.js"></script>
+        <script>
+            createFooter(); // Chama a função para inserir o rodapé
+          </script>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="Js/app.js"></script> <!-- Arquivo de script externo -->
+    <script src="Js/homeevento.js"></script>
+    
+</body>
+</html>
