@@ -1,42 +1,62 @@
-// eventos.js
 
-// Array com os eventos
-const eventos = [
-    {
-        "id": 1,
-        "titulo": "Campeonato de Judô",
-        "data": "15 de Novembro",
-        "horario": "09:00 às 12:00",
-        "local": "Quadra esportiva Escola Teresiano",
-        "preco": "R$ 150,00",
-        "imagem": "img/campeonato-judo.jpg",
-        "descricao": "Descrição detalhada sobre o Campeonato de Judô"
-    },
-    {
-        "id": 2,
-        "titulo": "Torneio de Xadrez",
-        "data": "25 de Novembro",
-        "horario": "14:00 às 17:00",
-        "local": "Auditório 1 da Escola Teresiano",
-        "preco": "R$ 80,00",
-        "imagem": "img/campeonato-xadrez.jpg",
-        "descricao": "Descrição detalhada sobre o Torneio de Xadrez."
-    },
-    {
-        "id": 3,
-        "titulo": "Campeonato de Tecido Acrobático",
-        "data": "5 de Dezembro",
-        "horario": "10:00 às 13:00",
-        "local": "Quadra esportiva Escola Teresiano",
-        "preco": "R$ 200,00",
-        "imagem": "img/campeonato-tecido.jpg",
-        "descricao": "Descrição detalhada sobre o Campeonato de Tecido Acrobático."
+// Função para adicionar um evento ao carrinho
+function adicionarAoCarrinho() {
+    const eventoId = obterEventoId();  // Obtém o ID do evento da URL
+    if (!eventoId) {
+        alert("ID do evento não encontrado.");
+        return;
     }
-];
 
-// Armazena os eventos no localStorage se ainda não estiverem armazenados
-if (!localStorage.getItem('eventos')) {
-    localStorage.setItem('eventos', JSON.stringify(eventos));
+    fetch(`http://localhost:3000/eventos/${eventoId}`)
+        .then(response => response.json())
+        .then(evento => {
+            console.log('Evento recebido:', evento);  // Log para verificar os dados do evento
+            if (!evento) {
+                alert('Evento não encontrado.');
+                return;
+            }
+            const aluno_matricula = localStorage.getItem('userMatricula');  // Obtém a matrícula do aluno logado
+            const itemCarrinho = {
+                id: evento.evento_id,
+                nome: evento.nome,
+                preco: evento.taxaevento,
+                quantidade: 1,  // Define a quantidade como 1 para eventos
+                aluno_matricula: parseInt(aluno_matricula)
+            };
+
+            // Adiciona ao carrinho no localStorage
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            const index = carrinho.findIndex(item => item.id === itemCarrinho.id && item.aluno_matricula === itemCarrinho.aluno_matricula);
+            if (index !== -1) {
+                carrinho[index].quantidade += 1;
+            } else {
+                carrinho.push(itemCarrinho);
+            }
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+            // Envia para o back-end
+            return fetch('http://localhost:3000/carrinho', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(itemCarrinho),
+            });
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Evento adicionado ao carrinho:', data);
+            alert(`${data.nome} foi adicionado ao carrinho!`);
+        })
+        .catch(error => {
+            console.error('Erro ao adicionar evento ao carrinho:', error);
+        });
+}
+
+// Função para obter o ID do evento da URL
+function obterEventoId() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id');
 }
 
 async function fetchEventos() {
@@ -79,7 +99,7 @@ function renderEventos(eventos) {
         
         const card = `
            <a href="detalhes.html?id=${evento.evento_id}" class="evento"> 
-                <img src="${evento.imagem}" alt="${evento.nome}">
+                <img src="http://localhost:3000/produtos/imagens/${evento.imagem}" alt="${evento.nome}">
                 <div class="info-evento">
                     <h3>${evento.nome}</h3>
                     <p>Data: ${dataFormatada}</p>

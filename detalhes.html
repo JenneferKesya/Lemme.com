@@ -12,11 +12,12 @@
     </head>
     <body>
         <body>
-            <script src="components/navbar.js"></script>
-            <script>
-                createHeader(); // Chama a função para inserir o cabeçalho
-              </script>
-           </header>
+            <header>
+                <script src="components/navbar.js"></script>
+                <script>
+                    createHeader(); // Chama a função para inserir o cabeçalho
+                </script>
+            </header>
 
 
         <div class="detalhes-evento">
@@ -29,13 +30,15 @@
                 <p id="preco-evento"></p>
                 <p id="local-evento"></p>
                 <p id="descricao-evento"></p>
+
             </div>
             <div class="button">
-                <a href="inscrição.html">
-                  <button id="loadMoreButton">Inscreva-se</button>
-                </a>
+                <button id="loadMoreButton" onclick="adicionarAoCarrinho()">Adicionar Ao Carrinho</button>
+                
               </div>
         </div>
+        
+        
         <script src="Js/detalhes.js" defer></script>
 
         <script src="components/footer.js"></script>

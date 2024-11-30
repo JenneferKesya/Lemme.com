@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho de Compras</title>
-    <link rel="stylesheet" href="css/carrinho.css"> <!-- Link para o CSS -->
+    <link rel="stylesheet" href="css/carrinho.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
+    <script src="components/navbar.js"></script>
+    <script>
+        createHeader(); // Chama a função para inserir o cabeçalho
+    </script>
 
     <h1>Carrinho de Compras</h1>
-    <div id="carrinhoContainer"></div>
-    <div id="total"></div>
-    <button onclick="finalizarCompra()">Finalizar Compra</button>
+    <div id="carrinhoContainer"></div> <!-- Container dos itens do carrinho -->
+    <div id="total"></div> <!-- Total da compra -->
 
-    <script src="js/carrinho.js"></script> <!-- Link para o JavaScript -->
+    <!-- Botão para finalizar compra -->
+    <button onclick="irParaPagamento()">Finalizar Compra</button>
+
+    <script src="components/footer.js"></script>
+    <script>
+        createFooter(); // Chama a função para inserir o rodapé
+    </script>
+    <script src="js/carrinho.js"></script>
 </body>
 </html>

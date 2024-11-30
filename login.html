@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro/Login</title>
+        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/footer.css">
+     
+    
+    </head>
+    <body>
+        <header>
+            <script src="components/navbar.js"></script>
+            <script>createHeader(); // Chama a função para inserir o cabeçalho 
+            </script>
+        </header>
+
+        <!-- Formulário de Login -->
+        <section class="login-section">
+            <h2>Login</h2>
+            <form id="loginForm" class="login-form">
+                <label for="userMatricula">Usuário</label>
+                <input type="text" id="userMatricula" name="userMatricula" required placeholder="Digite sua Matrícula">
+            
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+            
+                <button type="submit" class="btn-login">Entrar</button>
+                <p class="option">Não possui cadastro?</p>
+            </form>
+            <div id="loginResponseMessage"></div>
+            <button id="openModalBtn">Cadastre-se</button>
+        </section>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Escolha o tipo de cadastro</h3>
+                <button onclick="window.location.href='cadastro.html'">Cadastro para estudantes</button>
+                <button onclick="window.location.href='cadastro-publico-geral.html'">Cadastro para público externo</button>
+            </div>
+        </div>
+        <script src="js/login.js"></script>
+    </body>
+</html>

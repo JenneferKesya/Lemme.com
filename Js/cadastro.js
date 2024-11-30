@@ -1,80 +1,49 @@
-// Alterna entre formulários de cadastro e login
-function toggleForm() {
-    const loginContainer = document.getElementById('login-container');
-    const cadastroContainer = document.getElementById('cadastro-container');
-    
-    if (loginContainer.style.display === "none") {
-        loginContainer.style.display = "block";
-        cadastroContainer.style.display = "none";
-    } else {
-        loginContainer.style.display = "none";
-        cadastroContainer.style.display = "block";
-    }
-}
-
-// Exibe o formulário de recuperação de senha
-function showRecovery() {
-    const loginContainer = document.getElementById('login-container');
-    const recContainer = document.getElementById('recuperacao-container');
-
-    loginContainer.style.display = "none";
-    recContainer.style.display = "block";
-}
-
-// Validação do formulário de cadastro
 document.getElementById('cadastroForm').addEventListener('submit', function(event) {
-    const nomeInput = document.getElementById('nome');
-    const cpfInput = document.getElementById('cpf');
-    const nomeErro = document.getElementById('nome-erro');
-    const cpfErro = document.getElementById('cpf-erro');
-    
-    let valid = true;
+    event.preventDefault(); // Impede o envio tradicional do formulário
 
-    // Validação do nome (somente letras)
-    const nomeRegex = /^[A-Za-zÀ-ÿ\s]+$/;
-    if (!nomeRegex.test(nomeInput.value)) {
-        nomeErro.style.display = 'block';
-        valid = false;
-    } else {
-        nomeErro.style.display = 'none';
-    }
+    // Coleta os dados do formulário
+    const usuario = {
+        nome: document.getElementById('nomeCompleto').value,
+        matricula: document.getElementById('matricula').value,
+        email: document.getElementById('email').value,
+        telefone: document.getElementById('phone').value,
+        senha: document.getElementById('password').value,
+    };
 
-    // Validação do CPF (somente números)
-    const cpfRegex = /^[0-9]+$/;
-    if (!cpfRegex.test(cpfInput.value)) {
-        cpfErro.style.display = 'block';
-        valid = false;
-    } else {
-        cpfErro.style.display = 'none';
-    }
-
-    // Se houver erros, impedir o envio do formulário
-    if (!valid) {
-        event.preventDefault();
-    }
+    // Envia os dados para o backend via fetch
+    fetch('http://127.0.0.1:3000/cadastro', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(usuario),
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.json().then(err => Promise.reject(err));
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data && data.matricula) {
+            alert('Cadastro realizado com sucesso!');
+            // Redireciona para a página de login após o cadastro
+            window.location.href = 'login.html';  // Substitua 'login.html' pelo caminho correto
+        } else {
+            alert('Erro ao cadastrar!');
+        }
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+        alert('Erro na conexão com o servidor ou na validação dos dados! Verifique se a Matricula ou email já esta cadastrados');
+    });
 });
 
-// Função que impede a digitação de números no campo de nome
-function apenasLetras(e) {
-    const charCode = e.charCode ? e.charCode : e.keyCode;
-    
-    // Permite letras, espaços e acentuação
-    if ((charCode >= 65 && charCode <= 90) || // Letras maiúsculas
-        (charCode >= 97 && charCode <= 122) || // Letras minúsculas
-        (charCode >= 192 && charCode <= 255) || // Letras acentuadas
-        charCode === 32) { // Espaço
-        return true;
-    }
-    return false;
-}
-
-// Função que impede a digitação de letras no campo de CPF (somente números)
-function apenasNumeros(e) {
-    const charCode = e.charCode ? e.charCode : e.keyCode;
-    
-    // Permite apenas números (0-9)
-    if (charCode >= 48 && charCode <= 57) {
-        return true;
-    }
-    return false;
-}
+// Validação do campo CPF para aceitar somente números e ter no máximo 11 dígitos
+document.getElementById("matricula").addEventListener("input", function() {
+    const matriculaInput = this;
+    // Permite apenas números e limita a 4 dígitos
+    matriculaInput.value = matriculaInput.value
+        .replace(/\D/g, "") // Remove qualquer caractere que não seja um dígito
+        .slice(0, 12); // Limita a entrada para os primeiros 4 dígitos
+});

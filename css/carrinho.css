@@ -1,0 +1,183 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+#carrinhoContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.item-carrinho {
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Centraliza o conteúdo */
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.item-carrinho h4 {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+.item-carrinho p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Centralizar o valor e o botão de remoção */
+.item-carrinho .preco-quantidade {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.item-carrinho button {
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.item-carrinho button:hover {
+    background-color: #d62839;
+}
+
+/* Centralizar o total */
+#total {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 15px 0;
+}
+
+#pagamento {
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#pagamento h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#pagamento div {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+#pagamento label {
+    font-size: 16px;
+    color: #333;
+}
+
+.campos-pagamento {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.campos-pagamento label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.campos-pagamento input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#pagamento p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Botão de finalizar compra */
+button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto;
+    background-color: #0068E9;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0054b2;
+}
+
+/* Modal para exibição do carrinho */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}

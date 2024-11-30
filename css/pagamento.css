@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #007BFF; /* Azul mais claro */
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.opcoes-pagamento {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.opcoes-pagamento label {
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.campos-pagamento {
+    margin-top: 20px;
+}
+
+.campos-pagamento input[type="text"] {
+    margin-bottom: 10px;
+}

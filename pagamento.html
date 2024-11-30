@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="css/pagamento.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <header>
+        <script src="components/navbar.js"></script>
+        <script>createHeader();</script>
+    </header>
+
+    <main>
+        <h1>Pagamento</h1>
+        <div id="itensCarrinho"></div> <!-- Exibição dos itens do carrinho -->
+        <div id="total"></div> <!-- Exibição do total -->
+
+        <form id="formPagamento">
+            <div id="pagamento">
+                <h2>Forma de Pagamento</h2>
+                <div class="opcoes-pagamento">
+                    <label>
+                        <input type="radio" name="formaPagamento" value="credito" onclick="mostrarCamposPagamento('credito')">
+                        Cartão de Crédito
+                    </label>
+                    <label>
+                        <input type="radio" name="formaPagamento" value="debito" onclick="mostrarCamposPagamento('debito')">
+                        Cartão de Débito
+                    </label>
+                    <label>
+                        <input type="radio" name="formaPagamento" value="boleto" onclick="mostrarCamposPagamento('boleto')">
+                        Boleto
+                    </label>
+                    <label>
+                        <input type="radio" name="formaPagamento" value="pix" onclick="mostrarCamposPagamento('pix')">
+                        Pix
+                    </label>
+                </div>
+            
+                <!-- Campos para Cartão de Crédito -->
+                <div id="camposCredito" class="campos-pagamento" style="display: none;">
+                    <h3>Cartão de Crédito</h3>
+                    <label>Número do Cartão:
+                        <input type="text" maxlength="16" placeholder="Número do cartão" required>
+                    </label>
+                    <label>Nome no Cartão:
+                        <input type="text" placeholder="Nome como no cartão" required>
+                    </label>
+                    <label>Data de Validade:
+                        <input type="text" maxlength="5" placeholder="MM/AA" required>
+                    </label>
+                    <label>CVV:
+                        <input type="text" maxlength="3" placeholder="CVV" required>
+                    </label>
+                </div>
+            
+                <!-- Campos para Cartão de Débito -->
+                <div id="camposDebito" class="campos-pagamento" style="display: none;">
+                    <h3>Cartão de Débito</h3>
+                    <label>Número do Cartão:
+                        <input type="text" maxlength="16" placeholder="Número do cartão" required>
+                    </label>
+                    <label>Nome no Cartão:
+                        <input type="text" placeholder="Nome como no cartão" required>
+                    </label>
+                    <label>Data de Validade:
+                        <input type="text" maxlength="5" placeholder="MM/AA" required>
+                    </label>
+                    <label>CVV:
+                        <input type="text" maxlength="3" placeholder="CVV" required>
+                    </label>
+                </div>
+
+                <!-- Campos para Boleto -->
+                <div id="camposBoleto" class="campos-pagamento" style="display: none;">
+                    <h3>Boleto</h3>
+                    <p>Após finalizar a compra, o boleto será gerado.</p>
+                </div>
+
+                <!-- Campos para Pix -->
+                <div id="camposPix" class="campos-pagamento" style="display: none;">
+                    <h3>Pix</h3>
+                    <p>Você receberá uma chave Pix para efetuar o pagamento.</p>
+                </div>
+
+            </div>
+
+            <button type="submit">Confirmar Pagamento</button>
+        </form>
+
+        <!-- Mensagem de finalização do pagamento -->
+        <div id="mensagemFinalizacao" style="display:none;">
+            <h3>Compra finalizada com sucesso!</h3>
+            <p>Seu pedido foi processado. Agradecemos pela compra!</p>
+        </div>
+    </main>
+
+    <script src="components/footer.js"></script>
+    <script>createFooter();</script>
+    <script src="js/pagamento.js"></script>
+</body>
+</html>

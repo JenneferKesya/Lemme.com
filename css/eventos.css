@@ -74,3 +74,15 @@ body{
     color: #0068E9;
 }
 
+button:hover {
+    background-color: #0056b3;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Botão menor */
+    cursor: pointer;
+    border-radius: 18px;
+    font-size: 0.9em;
+    transition: background-color 0.3s;   
+}
+
